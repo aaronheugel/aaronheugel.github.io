@@ -1,0 +1,17 @@
+title: Aaron Dow
+description: Essays, poetry, and writing by Aaron Dow
+author: Aaron Dow
+url: "https://aarondow.com"
+baseurl: ""
+lang: en
+
+markdown: kramdown
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - LICENSE
