@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-Welcome. I’m a writer based in Colorado. My work explores the quiet intersections of place, memory, and the everyday — through essays, poetry, and longer reflections.
+Welcome. I’m a writer based in Queens. My work explores the quiet intersections of place, memory, and the everyday — through essays, poetry, and longer reflections.
 
 ## Recent Writing
 
