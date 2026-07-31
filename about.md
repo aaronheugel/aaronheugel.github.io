@@ -6,6 +6,6 @@ permalink: /about/
 
 # About
 
-Aaron Dow is a writer based in Colorado. His work moves between essay, poetry, and longer reflection, often returning to questions of place, memory, attention, and the textures of ordinary life.
+Aaron Dow is a writer based in Queens. His work moves between essay, poetry, and longer reflection.
 
 This site is a quiet home for that writing.
