@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Breaking Form/Stick to Form
-date: 2026-07-31 17:00:00
+date: 2026-07-31 17:00
 ---
 
 If I have enabled this light go on\
