@@ -1,7 +1,5 @@
 ---
-layout: post
 title: MORNING 2 (afternoon 2)
-date: 2026-08-01 15:00
 ---
 
 A poem a day is not a comfort\

@@ -1,0 +1,35 @@
+{% assign sorted_pieces = site.writing | sort_natural: "title" %}
+{% if include.featured_first %}
+  {% assign featured_pieces = sorted_pieces | where: "featured", true %}
+  {% assign other_pieces = sorted_pieces | where_exp: "item", "item.featured != true" %}
+  {% assign ordered_pieces = featured_pieces | concat: other_pieces %}
+{% else %}
+  {% assign ordered_pieces = sorted_pieces %}
+{% endif %}
+{% assign piece_limit = include.limit | default: ordered_pieces.size %}
+
+{% if ordered_pieces.size > 0 %}
+<ul class="post-list">
+  {% for piece in ordered_pieces limit: piece_limit %}
+    <li>
+      <a href="{{ piece.url | relative_url }}">{{ piece.title }}</a>
+      {% assign snippet = piece.excerpt | default: piece.content %}
+      {% if piece.description %}
+        <p class="post-excerpt">{{ piece.description }}</p>
+      {% elsif snippet %}
+        {% if snippet contains '<br' %}
+          {% assign normalized = snippet | replace: '<br />', '||BR||' | replace: '<br/>', '||BR||' | replace: '<br>', '||BR||' %}
+          {% assign lines = normalized | strip_html | split: '||BR||' %}
+          {% assign line1 = lines[0] | strip %}
+          {% assign line2 = lines[1] | strip %}
+          <p class="post-excerpt post-excerpt--verse">{{ line1 }}{% if line2 and line2 != '' %}<br>{{ line2 }}{% endif %}{% if lines.size > 2 %} &hellip;{% endif %}</p>
+        {% else %}
+          <p class="post-excerpt">{{ snippet | strip_html | strip | truncatewords: 28 }}</p>
+        {% endif %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>{{ include.empty_message | default: "New writing will appear here soon." }}</p>
+{% endif %}

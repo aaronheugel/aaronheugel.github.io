@@ -8,4 +8,4 @@ Built as a custom Jekyll site with a quiet literary design system (warm off-whit
 
 ## Copyright
 
-All writing (`_posts/` and page copy) is &copy; Aaron Dow — All Rights Reserved. Site templates and CSS are MIT-licensed; see [LICENSE](LICENSE).
+All writing (`_writing/` and page copy) is &copy; Aaron Dow — All Rights Reserved. Site templates and CSS are MIT-licensed; see [LICENSE](LICENSE).

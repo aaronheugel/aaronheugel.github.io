@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Breaking Form/Stick to Form
-date: 2026-07-31 17:00
 ---
 
 If I have enabled this light go on\
