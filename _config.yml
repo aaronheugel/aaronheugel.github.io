@@ -11,6 +11,14 @@ permalink: /:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
 exclude:
   - README.md

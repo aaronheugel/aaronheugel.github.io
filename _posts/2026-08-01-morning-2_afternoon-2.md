@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: MORNING 2 (afternoon 2)
 date: 2026-08-01 15:00
 ---

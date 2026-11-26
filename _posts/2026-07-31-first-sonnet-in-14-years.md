@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: First Sonnet in 14 Years
 date: 2026-07-31 14:00
 ---

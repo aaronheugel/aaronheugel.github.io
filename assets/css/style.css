@@ -4,12 +4,16 @@
    ============================================ */
 
 :root {
+  /* Typography */
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+
   /* Light mode */
   --bg: #f8f5f0;
   --text: #2c2a26;
   --text-muted: #6b6560;
-  --accent: #9a6b4a;
-  --accent-hover: #7d5539;
+  --accent: #8a5c3b;
+  --accent-hover: #6e482d;
   --border: #e6dfd4;
   --header-rule: #e0d8cc;
 }
@@ -39,7 +43,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.7;
   color: var(--text);
@@ -78,22 +82,26 @@ body {
 }
 
 .site-title {
-  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.75rem;
   font-weight: 600;
+  line-height: 1.25;
   letter-spacing: -0.02em;
-  color: var(--text);
-  text-decoration: none;
-  display: inline-block;
   margin: 0 0 0.25rem 0;
 }
 
-.site-title:hover {
+.site-title a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.site-title a:hover {
   color: var(--accent);
 }
 
 .site-tagline {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-muted);
@@ -108,7 +116,7 @@ body {
 }
 
 .site-nav a {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text);
@@ -117,7 +125,8 @@ body {
 }
 
 .site-nav a:hover,
-.site-nav a[aria-current="page"] {
+.site-nav a[aria-current="page"],
+.site-nav a.is-active {
   color: var(--accent);
 }
 
@@ -130,7 +139,7 @@ body {
   padding-top: 2rem;
   padding-bottom: 3rem;
   border-top: 1px solid var(--border);
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--text-muted);
 }
@@ -139,9 +148,22 @@ body {
   margin: 0;
 }
 
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.footer-sep {
+  margin: 0 0.4rem;
+}
+
 /* Typography */
 h1, h2, h3, h4 {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   line-height: 1.3;
   color: var(--text);
@@ -178,6 +200,12 @@ a:hover {
   color: var(--accent-hover);
 }
 
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* Post list (homepage & writing index) */
 .post-list {
   list-style: none;
@@ -198,7 +226,7 @@ a:hover {
 }
 
 .post-list a {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text);
@@ -211,7 +239,7 @@ a:hover {
 }
 
 .post-meta {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--text-muted);
   margin-top: 0.35rem;
@@ -225,6 +253,17 @@ a:hover {
   line-height: 1.6;
 }
 
+.post-excerpt--verse {
+  line-height: 1.65;
+}
+
+.all-writing-link {
+  margin-top: 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
 /* Individual post */
 .post-header {
   margin-bottom: 2.5rem;
@@ -235,10 +274,71 @@ a:hover {
 }
 
 .post-date {
-  font-family: Inter, system-ui, sans-serif;
+  display: block;
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   color: var(--text-muted);
   margin: 0;
+}
+
+.post-content {
+  overflow-wrap: break-word;
+}
+
+.post-nav {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-sans);
+}
+
+.post-nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.post-nav-links a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text);
+  max-width: 48%;
+}
+
+.post-nav-links a:hover .post-nav-title {
+  color: var(--accent);
+}
+
+.post-nav-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.post-nav-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.post-nav-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.post-nav-back {
+  margin: 1.5rem 0 0 0;
+  font-size: 0.88rem;
+}
+
+.post-nav-back a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.post-nav-back a:hover {
+  color: var(--accent);
 }
 
 /* Prose adjustments */
@@ -274,16 +374,20 @@ hr {
   html {
     font-size: 17px;
   }
-  
+
   .site-header {
     padding-top: 2.5rem;
   }
-  
+
   .site-nav {
     gap: 1.15rem;
   }
-  
+
   h1 {
     font-size: 1.6rem;
+  }
+
+  .post-nav-links a {
+    max-width: 100%;
   }
 }

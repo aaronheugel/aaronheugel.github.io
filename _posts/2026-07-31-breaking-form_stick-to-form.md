@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Breaking Form/Stick to Form
 date: 2026-07-31 17:00
 ---

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #f8f5f0; stroke: #e6dfd4; }
+    .fg { fill: #8a5c3b; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1917; stroke: #2e2b28; }
+      .fg { fill: #c48a66; }
+    }
+  </style>
+  <rect class="bg" x="2" y="2" width="60" height="60" rx="12" stroke-width="2"/>
+  <text class="fg" x="32" y="44" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="400">A</text>
+</svg>

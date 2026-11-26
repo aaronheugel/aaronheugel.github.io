@@ -7,18 +7,8 @@ Welcome. I’m a writer based in Queens. My work explores the quiet intersection
 
 ## Recent Writing
 
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-      {% if post.excerpt %}
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+{% include post-list.html limit=5 empty_message="New writing will appear here soon." %}
 
-{% if site.posts.size == 0 %}
-  <p>New writing will appear here soon.</p>
+{% if site.posts.size > 5 %}
+<p class="all-writing-link"><a href="{{ '/writing/' | relative_url }}">All writing &rarr;</a></p>
 {% endif %}
